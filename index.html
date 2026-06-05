@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rémi Jonquières · Strategy, Entrepreneurship &amp; Consulting</title>
+  <meta name="description" content="Final-year BSc IEM (International Economics &amp; Management) student at Bocconi University. Founder of Altaïr Strategy. Building toward entrepreneurship.">
+  <meta property="og:title" content="Rémi Jonquières">
+  <meta property="og:description" content="Founder · Strategy Consultant · Bocconi University BSc IEM · GPA 28/30 · Open to European opportunities.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+/* ═══════════════════════════════════════════
+   PREMIUM DESIGN TOKENS — TypeUI × Inter
+   primary #3B82F6 · secondary #8B5CF6
+   surface #FFFFFF · text #111827
+═══════════════════════════════════════════ */
+:root {
+  --primary:       #3B82F6;
+  --primary-dark:  #2563EB;
+  --primary-light: #EFF6FF;
+  --secondary:     #8B5CF6;
+  --success:       #16A34A;
+  --surface:       #FFFFFF;
+  --surface-2:     #F9FAFB;
+  --surface-3:     #F3F4F6;
+  --text:          #111827;
+  --text-2:        #374151;
+  --text-sec:      #6B7280;
+  --text-ter:      #9CA3AF;
+  --border:        #E5E7EB;
+  --border-s:      #D1D5DB;
+  --shadow:        0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+  --shadow-md:     0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+  --r:    12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-f:  9999px;
+  --font: 'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --max:  1200px;
+  --nh:   64px;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:var(--font); color:var(--text);
+  background:var(--surface); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ──────────────────────────────── */
+nav {
+  position:fixed; top:0; left:0; right:0;
+  height:var(--nh);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  z-index:200; display:flex; align-items:center; padding:0 24px;
+}
+.nav-in {
+  max-width:var(--max); margin:0 auto; width:100%;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo {
+  font-size:15px; font-weight:800; letter-spacing:-.03em;
+  color:var(--text); text-decoration:none;
+}
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a {
+  font-size:13px; font-weight:500; color:var(--text-sec);
+  text-decoration:none; transition:color .15s;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--text); }
+.nav-cta { display:flex; align-items:center; gap:8px; }
+.ham {
+  display:none; flex-direction:column; gap:5px;
+  cursor:pointer; padding:4px; background:none; border:none;
+}
+.ham span {
+  width:22px; height:2px; background:var(--text);
+  border-radius:2px; transition:all .3s; display:block;
+}
+
+/* ── BUTTONS ──────────────────────────── */
+.btn {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:10px 20px; font-size:14px; font-weight:600;
+  border-radius:var(--r-f); text-decoration:none;
+  transition:background .15s,transform .1s,border-color .15s;
+  border:1.5px solid transparent; cursor:pointer;
+  font-family:var(--font); white-space:nowrap;
+}
+.btn-p { background:var(--text); color:#fff; border-color:var(--text); }
+.btn-p:hover { background:var(--text-2); border-color:var(--text-2); transform:translateY(-1px); }
+.btn-o { background:transparent; color:var(--text); border-color:var(--border-s); }
+.btn-o:hover { border-color:var(--text); background:var(--surface-2); }
+.btn-sm { padding:7px 14px; font-size:13px; }
+
+/* ── LAYOUT ───────────────────────────── */
+section { padding:100px 24px; }
+.c { max-width:var(--max); margin:0 auto; width:100%; }
+.lbl {
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:11px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--primary); margin-bottom:14px;
+}
+.dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--primary); display:inline-block; flex-shrink:0;
+}
+.stitle {
+  font-size:clamp(28px,4vw,44px); font-weight:800;
+  letter-spacing:-.03em; line-height:1.12; color:var(--text); margin-bottom:16px;
+}
+.ssub { font-size:17px; color:var(--text-sec); max-width:560px; line-height:1.65; }
+.sh { margin-bottom:64px; }
+
+/* ── HERO ─────────────────────────────── */
+#hero {
+  min-height:100vh;
+  padding-top:calc(var(--nh) + 80px);
+  padding-bottom:80px;
+  display:flex; align-items:center;
+}
+.hero-wrap { width:100%; }
+.hvar { display:none; }
+.hvar.on { display:block; }
+
+/* V1 – Centered */
+.hv1 { text-align:center; }
+.hv1 .badge {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13px; font-weight:500; color:var(--text-sec);
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--r-f); padding:6px 16px; margin-bottom:32px;
+}
+.pulse {
+  width:8px; height:8px; border-radius:50%; background:#16A34A;
+  flex-shrink:0; animation:pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow:0 0 0 0 rgba(22,163,74,.4); }
+  50%      { box-shadow:0 0 0 6px rgba(22,163,74,0); }
+}
+.hv1 .hn {
+  font-size:clamp(52px,9vw,108px); font-weight:900;
+  letter-spacing:-.045em; line-height:.94; color:var(--text); margin-bottom:22px;
+}
+.hv1 .ht {
+  font-size:clamp(15px,2vw,21px); font-weight:400;
+  color:var(--text-sec); margin-bottom:24px;
+}
+.hv1 .hb {
+  font-size:17px; line-height:1.7; color:var(--text-sec);
+  max-width:560px; margin:0 auto 40px;
+}
+.hv1 .ha { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+.hv1 .hm { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.hv1 .hm span { font-size:13px; color:var(--text-ter); display:flex; align-items:center; gap:5px; }
+
+/* V2 – Split */
+.hv2 { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.hv2 .heye {
+  font-size:11px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--primary); margin-bottom:20px;
+  display:flex; align-items:center; gap:7px;
+}
+.hv2 .hn {
+  font-size:clamp(38px,5vw,70px); font-weight:900;
+  letter-spacing:-.04em; line-height:.98; color:var(--text); margin-bottom:10px;
+}
+.hv2 .ht { font-size:18px; font-weight:500; color:var(--primary); margin-bottom:22px; }
+.hv2 .hb { font-size:15px; line-height:1.7; color:var(--text-sec); margin-bottom:32px; }
+.hv2 .ha { display:flex; gap:10px; flex-wrap:wrap; }
+.sp { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.sc {
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:22px 20px;
+  transition:box-shadow .2s,transform .15s;
+}
+.sc:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.sc.dk { background:var(--text); border-color:var(--text); grid-column:span 2; }
+.sc-n { font-size:28px; font-weight:800; letter-spacing:-.03em; color:var(--text); line-height:1; margin-bottom:4px; }
+.sc.dk .sc-n { color:#fff; }
+.sc-l { font-size:12px; color:var(--text-sec); }
+.sc.dk .sc-l { color:rgba(255,255,255,.6); }
+
+/* V3 – Editorial */
+.hv3 .hov {
+  font-size:12px; font-weight:500; color:var(--text-ter);
+  letter-spacing:.07em; text-transform:uppercase; margin-bottom:18px;
+}
+.hv3 .hn {
+  font-size:clamp(52px,10vw,120px); font-weight:900;
+  letter-spacing:-.045em; line-height:.92; color:var(--text); margin-bottom:28px;
+}
+.hv3 .hr { width:52px; height:3px; background:var(--primary); border-radius:2px; margin-bottom:28px; }
+.hv3 .hb { font-size:18px; line-height:1.65; color:var(--text-sec); max-width:680px; margin-bottom:10px; }
+.hv3 .hs { font-size:13px; color:var(--text-sec); margin-bottom:36px; }
+.hv3 .ha { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
+.hv3 .htags { display:flex; flex-wrap:wrap; gap:8px; }
+.pill {
+  font-size:12px; font-weight:500; color:var(--text-sec);
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--r-f); padding:5px 13px;
+}
+
+/* ── ABOUT ────────────────────────────── */
+#about { background:var(--surface-2); }
+.ag { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.at p { font-size:15px; line-height:1.8; color:var(--text-sec); margin-bottom:14px; }
+.at p:last-child { margin-bottom:0; }
+.lr { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+.lc {
+  display:flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:500; color:var(--text);
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-f); padding:6px 14px;
+}
+.lc .lv { font-size:11px; color:var(--text-ter); margin-left:2px; }
+.hls { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.hc {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r); padding:20px; transition:box-shadow .2s;
+}
+.hc:hover { box-shadow:var(--shadow); }
+.hci { font-size:22px; margin-bottom:8px; }
+.hcv { font-size:18px; font-weight:700; letter-spacing:-.02em; color:var(--text); margin-bottom:2px; }
+.hcl { font-size:12px; color:var(--text-sec); }
+
+/* ── TIMELINE ─────────────────────────── */
+.tl { position:relative; padding-left:36px; }
+.tl::before {
+  content:''; position:absolute; left:9px; top:8px; bottom:8px;
+  width:2px; background:var(--border);
+}
+.ti { position:relative; margin-bottom:52px; }
+.ti:last-child { margin-bottom:0; }
+.td {
+  position:absolute; left:-36px; top:8px;
+  width:18px; height:18px; border-radius:50%;
+  background:var(--surface); border:2.5px solid var(--border-s);
+}
+.ti:first-child .td { border-color:var(--primary); background:var(--primary); }
+.th {
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap:16px; flex-wrap:wrap; margin-bottom:6px;
+}
+.tr { font-size:18px; font-weight:700; color:var(--text); letter-spacing:-.015em; }
+.tp {
+  font-size:12px; font-weight:600; color:var(--text-ter);
+  background:var(--surface-3); border-radius:var(--r-f);
+  padding:4px 12px; white-space:nowrap; flex-shrink:0;
+}
+.tc { font-size:13px; font-weight:600; color:var(--primary); margin-bottom:10px; }
+.td2 { font-size:14px; line-height:1.7; color:var(--text-sec); margin-bottom:12px; }
+.tgs { display:flex; flex-wrap:wrap; gap:6px; }
+.tg {
+  font-size:11px; font-weight:500; color:var(--text-sec);
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--r-f); padding:3px 10px;
+}
+
+/* ── PROJECTS ─────────────────────────── */
+#projects { background:var(--surface-2); }
+.pg { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.pc {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-xl); padding:28px;
+  display:flex; flex-direction:column;
+  transition:box-shadow .2s,transform .15s;
+}
+.pc:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.pci {
+  width:48px; height:48px; border-radius:var(--r);
+  background:var(--primary-light); display:flex; align-items:center;
+  justify-content:center; font-size:22px; margin-bottom:16px; flex-shrink:0;
+}
+.pc.feat .pci { background:#111827; }
+.pcr { font-size:10px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:.09em; margin-bottom:6px; }
+.pcn { font-size:16px; font-weight:700; color:var(--text); letter-spacing:-.01em; margin-bottom:8px; }
+.pcd { font-size:13px; line-height:1.65; color:var(--text-sec); flex:1; margin-bottom:16px; }
+.pcl { font-size:13px; font-weight:600; color:var(--primary); text-decoration:none; display:inline-flex; align-items:center; gap:3px; }
+.pcl:hover { text-decoration:underline; }
+.fill-tag {
+  color:var(--primary); background:var(--primary-light);
+  border-radius:4px; padding:1px 6px; font-size:12px;
+  font-weight:600; font-style:italic;
+}
+
+/* ── EXPERTISE ────────────────────────── */
+.eg { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.ec {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:24px; transition:box-shadow .2s;
+}
+.ec:hover { box-shadow:var(--shadow); }
+.eci { font-size:26px; margin-bottom:12px; }
+.ecn { font-size:14px; font-weight:700; color:var(--text); margin-bottom:10px; }
+.ect { display:flex; flex-wrap:wrap; gap:5px; }
+
+/* ── HOBBIES ──────────────────────────── */
+#hobbies { background:#0f172a; }
+#hobbies .lbl { color:rgba(255,255,255,.4); }
+#hobbies .lbl .dot { background:rgba(255,255,255,.35); }
+#hobbies .stitle { color:#fff; }
+#hobbies .ssub { color:rgba(255,255,255,.55); }
+.hg { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.hob {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r-xl); padding:36px 28px; transition:background .2s;
+}
+.hob:hover { background:rgba(255,255,255,.09); }
+.hobem { font-size:40px; margin-bottom:18px; }
+.hobn { font-size:18px; font-weight:700; color:#fff; margin-bottom:10px; letter-spacing:-.01em; }
+.hobd { font-size:14px; line-height:1.65; color:rgba(255,255,255,.52); }
+
+/* ── CONTACT ──────────────────────────── */
+#contact { background:var(--surface-2); text-align:center; }
+.ctt {
+  font-size:clamp(32px,5vw,56px); font-weight:900;
+  letter-spacing:-.035em; color:var(--text); margin-bottom:16px;
+}
+.cts {
+  font-size:17px; color:var(--text-sec); margin-bottom:40px;
+  max-width:440px; margin-left:auto; margin-right:auto;
+}
+.cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+.ctn { font-size:13px; color:var(--text-ter); }
+
+/* ── FOOTER ───────────────────────────── */
+footer { padding:20px 24px; border-top:1px solid var(--border); }
+.fi {
+  max-width:var(--max); margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px;
+}
+.fc { font-size:12px; color:var(--text-ter); }
+.fl { display:flex; gap:18px; }
+.fl a { font-size:12px; color:var(--text-ter); text-decoration:none; transition:color .15s; }
+.fl a:hover { color:var(--text); }
+
+/* ── FADE-UP ANIMATION ────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.fu { opacity:0; }
+.fu.in { animation:fadeUp .6s ease forwards; }
+.fu.d1.in { animation-delay:.08s; }
+.fu.d2.in { animation-delay:.16s; }
+.fu.d3.in { animation-delay:.24s; }
+.fu.d4.in { animation-delay:.32s; }
+.fu.d5.in { animation-delay:.40s; }
+
+/* ── RESPONSIVE ───────────────────────── */
+@media (max-width:1024px) {
+  .pg,.hg { grid-template-columns:repeat(2,1fr); }
+  .hv2 { grid-template-columns:1fr; gap:48px; }
+  .ag,.amg { grid-template-columns:1fr; gap:48px; }
+}
+@media (max-width:768px) {
+  section { padding:64px 16px; }
+  nav { padding:0 16px; }
+  .nav-links {
+    display:none; position:absolute; top:var(--nh); left:0; right:0;
+    background:rgba(255,255,255,.98); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border); padding:20px; flex-direction:column; gap:18px;
+  }
+  .nav-links.open { display:flex; }
+  .nav-links a { font-size:15px; color:var(--text); }
+  .ham { display:flex; }
+  .pg,.eg,.hg,.hls { grid-template-columns:1fr; }
+  .sp { grid-template-columns:1fr 1fr; }
+  .sc.dk { grid-column:span 2; }
+}
+@media (max-width:480px) {
+  .hv1 .hn { font-size:clamp(42px,13vw,72px); }
+  .hv3 .hn { font-size:clamp(46px,13vw,80px); }
+  .sp { grid-template-columns:1fr; }
+  .sc.dk { grid-column:span 1; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════ -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="#" class="nav-logo" aria-label="Rémi Jonquières home">Rémi Jonquières</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#hobbies">Beyond Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-o btn-sm" aria-label="LinkedIn profile">LinkedIn ↗</a>
+      <button class="ham" id="ham" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══ HERO ═════════════════════════════════════ -->
+<section id="hero" aria-label="Introduction">
+  <div class="c">
+    <div class="hero-wrap">
+
+      <!-- Variation 1 — Centered Minimal -->
+      <div class="hvar hv1 on" id="hv1">
+        <div class="badge fu in">
+          <span class="pulse" aria-hidden="true"></span>
+          Open to opportunities · Milan &amp; Paris
+        </div>
+        <h1 class="hn fu d1 in">Rémi<br>Jonquières</h1>
+        <p class="ht fu d2 in">Founder · Strategy Consultant · Bocconi University</p>
+        <p class="hb fu d3 in">
+          Final-year BSc IEM (International Economics &amp; Management) student at Bocconi (GPA 28/30),
+          working at the intersection of strategy and entrepreneurship.
+          Founder of Altaïr Strategy. Working toward founding something of my own after graduation.
+        </p>
+        <div class="ha fu d4 in">
+          <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-p">Connect on LinkedIn ↗</a>
+          <a href="https://drive.google.com/drive/folders/1I44KkzKU6tnTQGKUuZJTvO9KS0_jFAJw?usp=drive_link" class="btn btn-o">Download CV ↓</a>
+        </div>
+        <div class="hm fu d5 in">
+          <span>📍 Milan · Paris</span>
+          <span>🎓 Bocconi BSc IEM · GPA 28/30</span>
+          <span>🌍 FR · EN · IT (B2) · DE (B2)</span>
+        </div>
+      </div>
+
+      <!-- Variation 2 — Split + Stats Panel -->
+      <div class="hvar hv2" id="hv2">
+        <div>
+          <p class="heye fu in"><span class="dot"></span> Open to opportunities</p>
+          <h1 class="hn fu d1 in">Rémi<br>Jonquières</h1>
+          <p class="ht fu d2 in">Founder · Strategy Consultant</p>
+          <p class="hb fu d3 in">
+            Final-year BSc IEM (International Economics &amp; Management) student at Bocconi University (GPA 28/30), graduating summer 2027.
+            Founder of Altaïr Strategy. Interested in entrepreneurship, strategy, and European startups.
+          </p>
+          <div class="ha fu d4 in">
+            <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-p">LinkedIn ↗</a>
+            <a href="https://drive.google.com/drive/folders/1I44KkzKU6tnTQGKUuZJTvO9KS0_jFAJw?usp=drive_link" class="btn btn-o">Download CV</a>
+          </div>
+        </div>
+        <div class="sp fu d2 in" role="list" aria-label="Key stats">
+          <div class="sc" role="listitem"><div class="sc-n">28/30</div><div class="sc-l">Bocconi GPA</div></div>
+          <div class="sc" role="listitem"><div class="sc-n">4</div><div class="sc-l">International Profile</div></div>
+          <div class="sc" role="listitem"><div class="sc-n">3+</div><div class="sc-l">projects</div></div>
+          <div class="sc" role="listitem"><div class="sc-n">2027</div><div class="sc-l">Bocconi graduation</div></div>
+          <div class="sc dk" role="listitem">
+            <div class="sc-n">Milan · Paris</div>
+            <div class="sc-l">Open to European opportunities across FR, IT, DACH, and UK</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variation 3 — Editorial / Large Type -->
+      <div class="hvar hv3" id="hv3">
+        <p class="hov fu in">Personal Portfolio · 2026</p>
+        <h1 class="hn fu d1 in">Rémi<br>Jonquières</h1>
+        <div class="hr fu d2 in" aria-hidden="true"></div>
+        <p class="hb fu d2 in">
+          Final-year BSc IEM (International Economics &amp; Management) student at Bocconi University,
+          working at the intersection of strategy and entrepreneurship.
+          Founder of Altaïr Strategy. Every experience is a step toward building something of my own.
+        </p>
+        <p class="hs fu d3 in">BSc IEM, Bocconi · GPA 28/30 · McKinsey Forward Certificate · French · English · Italian (B2) · German (B2)</p>
+        <div class="ha fu d3 in">
+          <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-p">Connect on LinkedIn ↗</a>
+          <a href="https://drive.google.com/drive/folders/1I44KkzKU6tnTQGKUuZJTvO9KS0_jFAJw?usp=drive_link" class="btn btn-o">Download CV ↓</a>
+        </div>
+        <div class="htags fu d4 in">
+          <span class="pill">🏛️ Bocconi University</span>
+          <span class="pill">🚀 Entrepreneurship</span>
+          <span class="pill">📊 Corporate Finance</span>
+          <span class="pill">🌍 European Startups</span>
+          <span class="pill">📱 Content &amp; Growth</span>
+          <span class="pill">🤝 Strategy Consulting</span>
+          <span class="pill">📐 Maths Olympiads</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ ABOUT ════════════════════════════════════ -->
+<section id="about" aria-labelledby="about-h">
+  <div class="c">
+    <div class="ag">
+      <div>
+        <p class="lbl"><span class="dot"></span>Background</p>
+        <h2 class="stitle" id="about-h">Analytical rigour<br>meets entrepreneurial drive</h2>
+        <div class="at">
+          <p>Final-year student in the BSc IEM (International Economics &amp; Management) programme at Bocconi University (GPA 28/30, graduating Summer 2027), based between Milan and Paris. My background sits at the intersection of quantitative rigour, having competed in Maths Olympiads, and hands-on building: I founded a consulting firm at university before my second year.</p>
+          <p>Beyond academics, I serve as a Scout leader and am President of Bocconi's largest music association. I tend to favour action over theory, and try to use the tools available to keep moving forward.</p>
+          <p>My longer-term goal is to found a startup of my own. The different experiences I am accumulating along the way, in consulting, content, and technology, are all steps in that direction.</p>
+        </div>
+        <div class="lr" role="list" aria-label="Languages">
+          <span class="lc" role="listitem">🇫🇷 French<span class="lv">Native</span></span>
+          <span class="lc" role="listitem">🇬🇧 English<span class="lv">Fluent</span></span>
+          <span class="lc" role="listitem">🇮🇹 Italian<span class="lv">B2</span></span>
+          <span class="lc" role="listitem">🇩🇪 German<span class="lv">B2</span></span>
+        </div>
+      </div>
+      <div class="hls" role="list" aria-label="Key credentials">
+        <div class="hc" role="listitem"><div class="hci">🎓</div><div class="hcv">28/30</div><div class="hcl">Bocconi GPA</div></div>
+        <div class="hc" role="listitem"><div class="hci">📜</div><div class="hcv">McKinsey</div><div class="hcl">Forward Certificate</div></div>
+        <div class="hc" role="listitem"><div class="hci">🏅</div><div class="hcv">Olympiads</div><div class="hcl">Maths competitor</div></div>
+        <div class="hc" role="listitem"><div class="hci">🌍</div><div class="hcv">4 langs</div><div class="hcl">FR · EN · IT · DE</div></div>
+        <div class="hc" role="listitem"><div class="hci">🎵</div><div class="hcv">President</div><div class="hcl">Bocconi Music Assoc.</div></div>
+        <div class="hc" role="listitem"><div class="hci">🏕️</div><div class="hcv">Scout leader</div><div class="hcl">Team leadership</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ EXPERIENCE ═══════════════════════════════ -->
+<section id="experience" aria-labelledby="exp-h">
+  <div class="c">
+    <div class="sh">
+      <p class="lbl"><span class="dot"></span>Work</p>
+      <h2 class="stitle" id="exp-h">Professional experience</h2>
+      <p class="ssub">Consulting, project management, and leadership roles that have shaped how I work.</p>
+    </div>
+    <div class="tl" role="list">
+
+      <div class="ti" role="listitem">
+        <div class="td" aria-hidden="true"></div>
+        <div class="th">
+          <h3 class="tr">Junior Key Account Manager / Project Manager</h3>
+          <span class="tp">Jun–Aug 2026</span>
+        </div>
+        <p class="tc">RC Concept (RC Group) · Boulogne-Billancourt, Paris, <em>Incoming CDD</em></p>
+        <p class="td2">KAM/PM role at RC Concept Opérationnel, a leading player in point-of-sale advertising and commercial furniture. Managing major client accounts with full project delivery responsibility. Starting June 8, 2026.</p>
+        <div class="tgs">
+          <span class="tg">Key Account Management</span>
+          <span class="tg">Project Delivery</span>
+          <span class="tg">PLV / Retail Advertising</span>
+          <span class="tg">Paris</span>
+        </div>
+      </div>
+
+      <div class="ti" role="listitem">
+        <div class="td" aria-hidden="true"></div>
+        <div class="th">
+          <h3 class="tr">Founder</h3>
+          <span class="tp">2024 – Present</span>
+        </div>
+        <p class="tc">Altaïr Strategy · Milan</p>
+        <p class="td2">Founded a small consulting firm while studying at Bocconi. Running client-facing strategy and growth missions. Active client: Shelters Finance (French tokenised real estate FinTech), where I am working on LinkedIn organic growth and content optimisation. Built branded client deliverables (crimson/gold identity, Garamond/Montserrat).</p>
+        <div class="tgs">
+          <span class="tg">Founding</span>
+          <span class="tg">Strategy Consulting</span>
+          <span class="tg">Growth Strategy</span>
+          <span class="tg">Client Delivery</span>
+        </div>
+      </div>
+
+      <div class="ti" role="listitem">
+        <div class="td" aria-hidden="true"></div>
+        <div class="th">
+          <h3 class="tr">Project Manager</h3>
+          <span class="tp">2023 – Present</span>
+        </div>
+        <p class="tc">Blackmont Consulting · Milan (independent student consulting firm)</p>
+        <p class="td2">Promoted from Consultant to Project Manager at Blackmont Consulting, an independent student consulting organisation. Responsible for project delivery, team coordination, and client communication across multi-week engagements.</p>
+        <div class="tgs">
+          <span class="tg">Project Management</span>
+          <span class="tg">Team Leadership</span>
+          <span class="tg">Consulting</span>
+        </div>
+      </div>
+
+      <div class="ti" role="listitem">
+        <div class="td" aria-hidden="true"></div>
+        <div class="th">
+          <h3 class="tr">Scout Leader</h3>
+          <span class="tp">2019 – Present</span>
+        </div>
+        <p class="tc">Scouts · France</p>
+        <p class="td2">Leading a group of young scouts across outdoor activities, civic projects, and team-building experiences. The role involves coordinating volunteers, managing logistics, and building a supportive group dynamic over multi-day and multi-week programmes.</p>
+        <div class="tgs">
+          <span class="tg">Team Leadership</span>
+          <span class="tg">Coordination</span>
+          <span class="tg">Civic Engagement</span>
+        </div>
+      </div>
+
+      <div class="ti" role="listitem">
+        <div class="td" aria-hidden="true"></div>
+        <div class="th">
+          <h3 class="tr">President</h3>
+          <span class="tp">2023 – Present</span>
+        </div>
+        <p class="tc">Bocconi Music Association · Milan</p>
+        <p class="td2">President of Bocconi's largest music association, focused on music, events, and cultural programming. Responsible for the association's direction, event organisation, and member community.</p>
+        <div class="tgs">
+          <span class="tg">Leadership</span>
+          <span class="tg">Events</span>
+          <span class="tg">Music &amp; Culture</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PROJECTS ══════════════════════════════════ -->
+<section id="projects" aria-labelledby="proj-h">
+  <div class="c">
+    <div class="sh">
+      <p class="lbl"><span class="dot"></span>Projects</p>
+      <h2 class="stitle" id="proj-h">What I'm building</h2>
+      <p class="ssub">Side projects, tools, and initiatives I am working on alongside my studies.</p>
+    </div>
+    <div class="pg" role="list">
+
+      <article class="pc feat" role="listitem">
+        <div class="pci">📱</div>
+        <p class="pcr">Personal Account</p>
+        <h3 class="pcn">@remi.jonquieres</h3>
+        <p class="pcd">Personal Instagram account sharing insights on news, startups, and growth. A way to stay engaged with the broader ecosystem, develop my perspective publicly, and connect with people interested in similar topics.</p>
+        <a href="https://instagram.com/remi.jonquieres" target="_blank" rel="noopener" class="pcl">Follow on Instagram ↗</a>
+      </article>
+
+      <article class="pc" role="listitem">
+        <div class="pci">🏠</div>
+        <p class="pcr">Active Consulting Mission</p>
+        <h3 class="pcn">Shelters Finance</h3>
+        <p class="pcd">Growth strategy mission via Altaïr Strategy for a French tokenised real estate startup. Scope: LinkedIn organic growth, content strategy, and go-to-market optimisation.</p>
+        <a href="https://www.linkedin.com/company/alta%C3%AFr-strategy" target="_blank" rel="noopener" class="pcl">Altaïr Strategy on LinkedIn ↗</a>
+      </article>
+
+      <article class="pc" role="listitem">
+        <div class="pci">🍕</div>
+        <p class="pcr">Idea Stage</p>
+        <h3 class="pcn">Restaurant Optimizer</h3>
+        <p class="pcd">A tool for delivery-first independent restaurants. The idea is to process CSV exports from Uber Eats and Deliveroo, surface useful metrics, and generate French-language recommendations to help owners make better decisions. Still in validation.</p>
+        <span class="pcl"><span class="fill-tag">In Validation</span></span>
+      </article>
+
+      <article class="pc" role="listitem">
+        <div class="pci">🤖</div>
+        <p class="pcr">Automation Tool</p>
+        <h3 class="pcn">LinkedIn Growth System</h3>
+        <p class="pcd">A two-part system: a comment generator that scrapes post text and routes drafts through a manual approval step before posting; and a feed scanner that surfaces relevant recent posts in French and English. Built and running.</p>
+        <span class="pcl">Internal Tool: Live ✓</span>
+      </article>
+
+      <article class="pc" role="listitem">
+        <div class="pci">📖</div>
+        <p class="pcr">Coursework</p>
+        <h3 class="pcn">Bocconi Coursework</h3>
+        <p class="pcd">BSc IEM curriculum covering Corporate Finance (WACC, APV, MM propositions), Financial Analysis (IFRS consolidation, ratio analysis), Statistics and Econometrics (Stata, Python). Building a solid foundation in quantitative reasoning and financial modelling.</p>
+        <span class="pcl">GPA 28/30 →</span>
+      </article>
+
+      <article class="pc" role="listitem">
+        <div class="pci">🛠️</div>
+        <p class="pcr">Next Steps</p>
+        <h3 class="pcn">Hackathons &amp; Master's in Entrepreneurship</h3>
+        <p class="pcd">Planning to attend several hackathons, including Junction, the HEC Hackathon, and the Bocconi Hackathon, to build a technical network and test ideas. Also exploring a Master's in Entrepreneurship (X-HEC, emlyon, or Bocconi ITE) as a post-graduation path.</p>
+        <span class="pcl">In progress →</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ EXPERTISE ════════════════════════════════ -->
+<section id="expertise" aria-labelledby="ski-h">
+  <div class="c">
+    <div class="sh">
+      <p class="lbl"><span class="dot"></span>Skills</p>
+      <h2 class="stitle" id="ski-h">Domain expertise</h2>
+    </div>
+    <div class="eg" role="list">
+      <div class="ec" role="listitem">
+        <div class="eci">💼</div>
+        <h3 class="ecn">Corporate Finance</h3>
+        <div class="ect">
+          <span class="tg">WACC</span><span class="tg">CAPM</span><span class="tg">APV</span>
+          <span class="tg">DCF Valuation</span><span class="tg">Capital Structure</span><span class="tg">MM Propositions</span>
+        </div>
+      </div>
+      <div class="ec" role="listitem">
+        <div class="eci">📊</div>
+        <h3 class="ecn">Financial Analysis</h3>
+        <div class="ect">
+          <span class="tg">Ratio Analysis</span><span class="tg">IFRS Consolidation</span>
+          <span class="tg">Business Combinations</span><span class="tg">Industry Classification</span>
+        </div>
+      </div>
+      <div class="ec" role="listitem">
+        <div class="eci">🎯</div>
+        <h3 class="ecn">Strategy &amp; Consulting</h3>
+        <div class="ect">
+          <span class="tg">Growth Strategy</span><span class="tg">Go-to-Market</span>
+          <span class="tg">Client Delivery</span><span class="tg">Project Management</span>
+        </div>
+      </div>
+      <div class="ec" role="listitem">
+        <div class="eci">📱</div>
+        <h3 class="ecn">Marketing &amp; Growth</h3>
+        <div class="ect">
+          <span class="tg">LinkedIn Algorithm</span><span class="tg">Content Strategy</span>
+          <span class="tg">Distribution Channels</span><span class="tg">Organic Growth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ HOBBIES ═══════════════════════════════════ -->
+<section id="hobbies" aria-labelledby="hob-h">
+  <div class="c">
+    <div class="sh">
+      <p class="lbl">Beyond Work</p>
+      <h2 class="stitle" id="hob-h">What keeps me grounded</h2>
+      <p class="ssub">Discipline, creativity, and community outside the lecture hall.</p>
+    </div>
+    <div class="hg" role="list">
+      <article class="hob" role="listitem">
+        <div class="hobem" aria-hidden="true">🏃</div>
+        <h3 class="hobn">Running</h3>
+        <p class="hobd">Running is how I reset. Early mornings along the Navigli in Milan or the Seine in Paris provide structured time that builds focus and resilience. My current goal is to complete a marathon, and the training process has reinforced many of the habits that make long-horizon projects work.</p>
+      </article>
+      <article class="hob" role="listitem">
+        <div class="hobem" aria-hidden="true">🥊</div>
+        <h3 class="hobn">Boxing</h3>
+        <p class="hobd">Boxing builds composure under pressure. Learning to stay calm and focused when the stakes are high is a skill that carries over into consulting work, client conversations, and the challenge of running several things at once.</p>
+      </article>
+      <article class="hob" role="listitem">
+        <div class="hobem" aria-hidden="true">🎸</div>
+        <h3 class="hobn">Music</h3>
+        <p class="hobd">I have played guitar in three or more bands over the years. Music has taught me how to collaborate, listen, and adapt in real time. It also connects directly to my role as President of Bocconi's largest music association.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CONTACT ═══════════════════════════════════ -->
+<section id="contact" aria-labelledby="ct-h">
+  <div class="c">
+    <h2 class="ctt" id="ct-h">Let's connect</h2>
+    <p class="cts">Open to internships, consulting conversations, co-founder discussions, and startup ecosystem chats.</p>
+    <div class="cta">
+      <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-p">Connect on LinkedIn ↗</a>
+      <a href="mailto:remi.jonquieres@studbocconi.it" class="btn btn-o">Send an email</a>
+      <a href="https://drive.google.com/drive/folders/1I44KkzKU6tnTQGKUuZJTvO9KS0_jFAJw?usp=drive_link" class="btn btn-o">Download CV ↓</a>
+    </div>
+    <p class="ctn">
+      📍 Milan (Bocconi) &amp; Paris &nbsp;·&nbsp; 🌍 Open to European opportunities
+    </p>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="fi">
+    <p class="fc">© 2026 Rémi Jonquières · TypeUI Premium Design System</p>
+    <nav class="fl" aria-label="Footer links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </nav>
+  </div>
+</footer>
+
+
+<!-- ══ TYPEUI PANEL (required) ══════════════════ -->
+<div id="tuiPanel" role="toolbar" aria-label="Hero layout selector"
+  style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483647;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:9999px;font:500 14px/20px system-ui,sans-serif;box-shadow:0 10px 24px rgba(0,0,0,.25);white-space:nowrap">
+  <a href="https://www.typeui.sh" target="_blank" rel="noopener noreferrer"
+    style="display:flex;align-items:center;gap:6px;text-decoration:none;color:inherit">
+    <img src="https://www.typeui.sh/logo.svg" alt="TypeUI" width="18" height="18" style="flex-shrink:0">
+    <span style="font-weight:700">TypeUI</span>
+  </a>
+  <span style="opacity:.35;margin:0 2px">|</span>
+  <button id="vb1" onclick="sw(1)" style="padding:4px 12px;background:rgba(255,255,255,.92);color:#111;border:none;border-radius:9999px;font:600 12px/18px system-ui;cursor:pointer" aria-pressed="true">Centered</button>
+  <button id="vb2" onclick="sw(2)" style="padding:4px 12px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3);border-radius:9999px;font:500 12px/18px system-ui;cursor:pointer" aria-pressed="false">Split</button>
+  <button id="vb3" onclick="sw(3)" style="padding:4px 12px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3);border-radius:9999px;font:500 12px/18px system-ui;cursor:pointer" aria-pressed="false">Editorial</button>
+  <span style="opacity:.35;margin:0 2px">|</span>
+  <span style="font-size:11px;opacity:.65">8/100 MCP calls</span>
+  <a href="https://www.typeui.sh/#pricing" target="_blank" rel="noopener noreferrer"
+    style="font-size:11px;color:rgba(255,255,255,.55);text-decoration:underline;margin-left:2px">Upgrade to Pro for unlimited calls</a>
+</div>
+
+
+<!-- ══ SCRIPTS ════════════════════════════════════ -->
+<script>
+/* Hero variation switcher */
+function sw(v) {
+  ['hv1','hv2','hv3'].forEach((id,i) => {
+    const el = document.getElementById(id);
+    if (el) { el.classList.remove('on'); if (i+1===v) el.classList.add('on'); }
+  });
+  ['vb1','vb2','vb3'].forEach((id,i) => {
+    const b = document.getElementById(id);
+    if (!b) return;
+    const on = i+1===v;
+    b.style.background = on ? 'rgba(255,255,255,.92)' : 'transparent';
+    b.style.color       = on ? '#111' : 'rgba(255,255,255,.7)';
+    b.style.border      = on ? 'none' : '1px solid rgba(255,255,255,.3)';
+    b.style.fontWeight  = on ? '600' : '500';
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
+/* Mobile hamburger */
+const ham  = document.getElementById('ham');
+const nav  = document.getElementById('navLinks');
+ham.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    ham.setAttribute('aria-expanded','false');
+  });
+});
+
+/* Scroll-triggered fade-up */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.fu:not(.in)').forEach((el,i) => {
+      el.style.animationDelay = (i * .07) + 's';
+      el.classList.add('in');
+    });
+    obs.unobserve(e.target);
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('section').forEach(s => obs.observe(s));
+
+/* Active nav highlight on scroll */
+const secs  = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let curr = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 110) curr = s.id; });
+  navAs.forEach(a => {
+    const href = a.getAttribute('href');
+    a.classList.toggle('active', href === '#' + curr);
+  });
+}, { passive: true });
+</script>
+
+</body>
+</html>
