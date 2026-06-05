@@ -124,11 +124,6 @@ section { padding:100px 24px; }
   padding-bottom:80px;
   display:flex; align-items:center;
 }
-.hero-wrap { width:100%; }
-.hvar { display:none; }
-.hvar.on { display:block; }
-
-/* V1 – Centered */
 .hv1 { text-align:center; }
 .hv1 .badge {
   display:inline-flex; align-items:center; gap:8px;
@@ -159,53 +154,6 @@ section { padding:100px 24px; }
 .hv1 .ha { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
 .hv1 .hm { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
 .hv1 .hm span { font-size:13px; color:var(--text-ter); display:flex; align-items:center; gap:5px; }
-
-/* V2 – Split */
-.hv2 { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-.hv2 .heye {
-  font-size:11px; font-weight:700; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--primary); margin-bottom:20px;
-  display:flex; align-items:center; gap:7px;
-}
-.hv2 .hn {
-  font-size:clamp(38px,5vw,70px); font-weight:900;
-  letter-spacing:-.04em; line-height:.98; color:var(--text); margin-bottom:10px;
-}
-.hv2 .ht { font-size:18px; font-weight:500; color:var(--primary); margin-bottom:22px; }
-.hv2 .hb { font-size:15px; line-height:1.7; color:var(--text-sec); margin-bottom:32px; }
-.hv2 .ha { display:flex; gap:10px; flex-wrap:wrap; }
-.sp { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.sc {
-  background:var(--surface-2); border:1px solid var(--border);
-  border-radius:var(--r-lg); padding:22px 20px;
-  transition:box-shadow .2s,transform .15s;
-}
-.sc:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
-.sc.dk { background:var(--text); border-color:var(--text); grid-column:span 2; }
-.sc-n { font-size:28px; font-weight:800; letter-spacing:-.03em; color:var(--text); line-height:1; margin-bottom:4px; }
-.sc.dk .sc-n { color:#fff; }
-.sc-l { font-size:12px; color:var(--text-sec); }
-.sc.dk .sc-l { color:rgba(255,255,255,.6); }
-
-/* V3 – Editorial */
-.hv3 .hov {
-  font-size:12px; font-weight:500; color:var(--text-ter);
-  letter-spacing:.07em; text-transform:uppercase; margin-bottom:18px;
-}
-.hv3 .hn {
-  font-size:clamp(52px,10vw,120px); font-weight:900;
-  letter-spacing:-.045em; line-height:.92; color:var(--text); margin-bottom:28px;
-}
-.hv3 .hr { width:52px; height:3px; background:var(--primary); border-radius:2px; margin-bottom:28px; }
-.hv3 .hb { font-size:18px; line-height:1.65; color:var(--text-sec); max-width:680px; margin-bottom:10px; }
-.hv3 .hs { font-size:13px; color:var(--text-sec); margin-bottom:36px; }
-.hv3 .ha { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
-.hv3 .htags { display:flex; flex-wrap:wrap; gap:8px; }
-.pill {
-  font-size:12px; font-weight:500; color:var(--text-sec);
-  background:var(--surface-2); border:1px solid var(--border);
-  border-radius:var(--r-f); padding:5px 13px;
-}
 
 /* ── ABOUT ────────────────────────────── */
 #about { background:var(--surface-2); }
@@ -358,8 +306,7 @@ footer { padding:20px 24px; border-top:1px solid var(--border); }
 /* ── RESPONSIVE ───────────────────────── */
 @media (max-width:1024px) {
   .pg,.hg { grid-template-columns:repeat(2,1fr); }
-  .hv2 { grid-template-columns:1fr; gap:48px; }
-  .ag,.amg { grid-template-columns:1fr; gap:48px; }
+  .ag { grid-template-columns:1fr; gap:48px; }
 }
 @media (max-width:768px) {
   section { padding:64px 16px; }
@@ -378,9 +325,6 @@ footer { padding:20px 24px; border-top:1px solid var(--border); }
 }
 @media (max-width:480px) {
   .hv1 .hn { font-size:clamp(42px,13vw,72px); }
-  .hv3 .hn { font-size:clamp(46px,13vw,80px); }
-  .sp { grid-template-columns:1fr; }
-  .sc.dk { grid-column:span 1; }
 }
   </style>
 </head>
@@ -410,10 +354,7 @@ footer { padding:20px 24px; border-top:1px solid var(--border); }
 <!-- ══ HERO ═════════════════════════════════════ -->
 <section id="hero" aria-label="Introduction">
   <div class="c">
-    <div class="hero-wrap">
-
-      <!-- Variation 1 — Centered Minimal -->
-      <div class="hvar hv1 on" id="hv1">
+    <div class="hv1">
         <div class="badge fu in">
           <span class="pulse" aria-hidden="true"></span>
           Open to opportunities · Milan &amp; Paris
@@ -434,61 +375,6 @@ footer { padding:20px 24px; border-top:1px solid var(--border); }
           <span>🎓 Bocconi BSc IEM · GPA 28/30</span>
           <span>🌍 FR · EN · IT (B2) · DE (B2)</span>
         </div>
-      </div>
-
-      <!-- Variation 2 — Split + Stats Panel -->
-      <div class="hvar hv2" id="hv2">
-        <div>
-          <p class="heye fu in"><span class="dot"></span> Open to opportunities</p>
-          <h1 class="hn fu d1 in">Rémi<br>Jonquières</h1>
-          <p class="ht fu d2 in">Founder · Strategy Consultant</p>
-          <p class="hb fu d3 in">
-            Final-year BSc IEM (International Economics &amp; Management) student at Bocconi University (GPA 28/30), graduating summer 2027.
-            Founder of Altaïr Strategy. Interested in entrepreneurship, strategy, and European startups.
-          </p>
-          <div class="ha fu d4 in">
-            <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-p">LinkedIn ↗</a>
-            <a href="https://drive.google.com/drive/folders/1I44KkzKU6tnTQGKUuZJTvO9KS0_jFAJw?usp=drive_link" class="btn btn-o">Download CV</a>
-          </div>
-        </div>
-        <div class="sp fu d2 in" role="list" aria-label="Key stats">
-          <div class="sc" role="listitem"><div class="sc-n">28/30</div><div class="sc-l">Bocconi GPA</div></div>
-          <div class="sc" role="listitem"><div class="sc-n">4</div><div class="sc-l">International Profile</div></div>
-          <div class="sc" role="listitem"><div class="sc-n">3+</div><div class="sc-l">projects</div></div>
-          <div class="sc" role="listitem"><div class="sc-n">2027</div><div class="sc-l">Bocconi graduation</div></div>
-          <div class="sc dk" role="listitem">
-            <div class="sc-n">Milan · Paris</div>
-            <div class="sc-l">Open to European opportunities across FR, IT, DACH, and UK</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Variation 3 — Editorial / Large Type -->
-      <div class="hvar hv3" id="hv3">
-        <p class="hov fu in">Personal Portfolio · 2026</p>
-        <h1 class="hn fu d1 in">Rémi<br>Jonquières</h1>
-        <div class="hr fu d2 in" aria-hidden="true"></div>
-        <p class="hb fu d2 in">
-          Final-year BSc IEM (International Economics &amp; Management) student at Bocconi University,
-          working at the intersection of strategy and entrepreneurship.
-          Founder of Altaïr Strategy. Every experience is a step toward building something of my own.
-        </p>
-        <p class="hs fu d3 in">BSc IEM, Bocconi · GPA 28/30 · McKinsey Forward Certificate · French · English · Italian (B2) · German (B2)</p>
-        <div class="ha fu d3 in">
-          <a href="https://linkedin.com/in/remi-jonquieres" target="_blank" rel="noopener" class="btn btn-p">Connect on LinkedIn ↗</a>
-          <a href="https://drive.google.com/drive/folders/1I44KkzKU6tnTQGKUuZJTvO9KS0_jFAJw?usp=drive_link" class="btn btn-o">Download CV ↓</a>
-        </div>
-        <div class="htags fu d4 in">
-          <span class="pill">🏛️ Bocconi University</span>
-          <span class="pill">🚀 Entrepreneurship</span>
-          <span class="pill">📊 Corporate Finance</span>
-          <span class="pill">🌍 European Startups</span>
-          <span class="pill">📱 Content &amp; Growth</span>
-          <span class="pill">🤝 Strategy Consulting</span>
-          <span class="pill">📐 Maths Olympiads</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -786,45 +672,8 @@ footer { padding:20px 24px; border-top:1px solid var(--border); }
 </footer>
 
 
-<!-- ══ TYPEUI PANEL (required) ══════════════════ -->
-<div id="tuiPanel" role="toolbar" aria-label="Hero layout selector"
-  style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483647;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:9999px;font:500 14px/20px system-ui,sans-serif;box-shadow:0 10px 24px rgba(0,0,0,.25);white-space:nowrap">
-  <a href="https://www.typeui.sh" target="_blank" rel="noopener noreferrer"
-    style="display:flex;align-items:center;gap:6px;text-decoration:none;color:inherit">
-    <img src="https://www.typeui.sh/logo.svg" alt="TypeUI" width="18" height="18" style="flex-shrink:0">
-    <span style="font-weight:700">TypeUI</span>
-  </a>
-  <span style="opacity:.35;margin:0 2px">|</span>
-  <button id="vb1" onclick="sw(1)" style="padding:4px 12px;background:rgba(255,255,255,.92);color:#111;border:none;border-radius:9999px;font:600 12px/18px system-ui;cursor:pointer" aria-pressed="true">Centered</button>
-  <button id="vb2" onclick="sw(2)" style="padding:4px 12px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3);border-radius:9999px;font:500 12px/18px system-ui;cursor:pointer" aria-pressed="false">Split</button>
-  <button id="vb3" onclick="sw(3)" style="padding:4px 12px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3);border-radius:9999px;font:500 12px/18px system-ui;cursor:pointer" aria-pressed="false">Editorial</button>
-  <span style="opacity:.35;margin:0 2px">|</span>
-  <span style="font-size:11px;opacity:.65">8/100 MCP calls</span>
-  <a href="https://www.typeui.sh/#pricing" target="_blank" rel="noopener noreferrer"
-    style="font-size:11px;color:rgba(255,255,255,.55);text-decoration:underline;margin-left:2px">Upgrade to Pro for unlimited calls</a>
-</div>
-
-
 <!-- ══ SCRIPTS ════════════════════════════════════ -->
 <script>
-/* Hero variation switcher */
-function sw(v) {
-  ['hv1','hv2','hv3'].forEach((id,i) => {
-    const el = document.getElementById(id);
-    if (el) { el.classList.remove('on'); if (i+1===v) el.classList.add('on'); }
-  });
-  ['vb1','vb2','vb3'].forEach((id,i) => {
-    const b = document.getElementById(id);
-    if (!b) return;
-    const on = i+1===v;
-    b.style.background = on ? 'rgba(255,255,255,.92)' : 'transparent';
-    b.style.color       = on ? '#111' : 'rgba(255,255,255,.7)';
-    b.style.border      = on ? 'none' : '1px solid rgba(255,255,255,.3)';
-    b.style.fontWeight  = on ? '600' : '500';
-    b.setAttribute('aria-pressed', on ? 'true' : 'false');
-  });
-}
-
 /* Mobile hamburger */
 const ham  = document.getElementById('ham');
 const nav  = document.getElementById('navLinks');
